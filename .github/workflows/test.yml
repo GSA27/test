@@ -1,0 +1,20 @@
+name: Scale Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      value1:
+        description: 'Test parameter 1'
+        required: true
+      value2:
+        description: 'Test parameter 2'
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print parameters
+        run: |
+          echo "value1: ${{ github.event.inputs.value1 }}"
+          echo "value2: ${{ github.event.inputs.value2 }}"
